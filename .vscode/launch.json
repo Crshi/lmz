@@ -13,7 +13,9 @@
             "host": "127.0.0.1",
             "program": "${fileDirname}/../main.go",
             "env": {
-                "GOPATH":"C:/Users/DMRDC/go"
+                "GOPATH":"C:/Users/诚如是/go"
+                //C:/Users/诚如是/go
+                //C:/Users/DMRDC/go
             },
             "args": [],
             "showLog": true
