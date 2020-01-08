@@ -2,9 +2,9 @@ package models
 
 // TagArticle 关联表
 type TagArticle struct {
-	ID        int
-	TagID     int
-	ArticleID int
+	Id        int
+	TagId     int
+	ArticleId int
 }
 
 // TableName 获取表名

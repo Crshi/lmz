@@ -2,7 +2,7 @@ package models
 
 // Tag 表
 type Tag struct {
-	ID   int
+	Id   int
 	Name string `orm:"size(32)"`
 }
 

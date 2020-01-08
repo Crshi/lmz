@@ -2,6 +2,7 @@ package init
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/crshi/lmz/utils"
 )
 
 func init() {

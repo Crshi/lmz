@@ -14,7 +14,7 @@
             "program": "${fileDirname}/../main.go",
             "env": {
                 // "GOPATH":"C:/Users/DMRDC/go"
-                "GOPATH":"C:/Users/诚如是/go"
+                //"GOPATH":"C:/Users/诚如是/go"
             },
             "args": [],
             "showLog": true

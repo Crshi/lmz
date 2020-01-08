@@ -7,7 +7,7 @@ import (
 
 // init初始化
 func init() {
-	orm.RegisterModel(new(Article),new(Tag),new(Catalog),new(TagArticle),new(CatalogArticle))
+	orm.RegisterModel(new(Article), new(Tag), new(Catalog), new(TagArticle), new(CatalogArticle))
 }
 
 // TableName 表名

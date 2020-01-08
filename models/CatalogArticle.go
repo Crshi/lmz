@@ -2,9 +2,9 @@ package models
 
 // CatalogArticle 表
 type CatalogArticle struct {
-	ID        int
-	CatalogID int
-	ArticleID int
+	Id        int
+	CatalogId int
+	ArticleId int
 }
 
 // TableName 表名
