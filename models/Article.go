@@ -1,6 +1,10 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"github.com/astaxie/beego/orm"
+)
 
 // Article 表
 type Article struct {
@@ -17,7 +21,26 @@ type Article struct {
 	//DeleterUserId
 }
 
+type ArticleQueryInput struct {
+	PagedInput
+	TagId        int
+	CatalogId    int
+	CreationTime time.Time
+}
+
 // TableName 获取表名
 func (a *Article) TableName() string {
 	return ArticleTBName()
+}
+
+// GetAllArticlesByPage 获取分页文章
+func GetAllArticlesByPage(input *ArticleQueryInput) ([]*Article, int64) {
+	query := orm.NewOrm().QueryTable(ArticleTBName())
+	data := make([]*Article, 0)
+	//默认排序
+	sortorder := "Id"
+	query = query.Filter("title__istartswith", input.Filter)
+	total, _ := query.Count()
+	query.OrderBy(sortorder).Limit(input.MaxResultCount, input.SkipCount).All(&data)
+	return data, total
 }

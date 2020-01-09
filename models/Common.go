@@ -9,10 +9,11 @@ type JsonResult struct {
 	Obj  interface{}          `json:"obj"`
 }
 
-// BaseQueryParam 用于查询的类
-type BaseQueryParam struct {
-	Sort   string `json:"sort"`
-	Order  string `json:"order"`
-	Offset int64  `json:"offset"`
-	Limit  int    `json:"limit"`
+// PagedInput 用于查询的类
+type PagedInput struct {
+	Filter         string `json:"filter"`
+	Sort           string `json:"sort"`
+	Order          string `json:"order"`
+	SkipCount      int    `json:"skipCount"`
+	MaxResultCount int    `json:"maxResultCount"`
 }
