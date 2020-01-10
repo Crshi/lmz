@@ -33,7 +33,7 @@ func (a *Article) TableName() string {
 	return ArticleTBName()
 }
 
-// GetAllArticlesByPage 获取分页文章
+// GetAllArticlesByPage 获取分页数据
 func GetAllArticlesByPage(input *ArticleQueryInput) ([]*Article, int64) {
 	query := orm.NewOrm().QueryTable(ArticleTBName())
 	data := make([]*Article, 0)
@@ -43,4 +43,15 @@ func GetAllArticlesByPage(input *ArticleQueryInput) ([]*Article, int64) {
 	total, _ := query.Count()
 	query.OrderBy(sortorder).Limit(input.MaxResultCount, input.SkipCount).All(&data)
 	return data, total
+}
+
+// Get 获取单个文章
+func Get(id int) (*Article, error) {
+	o := orm.NewOrm()
+	a := Article{Id: id}
+	err := o.Read(&a)
+	if err != nil {
+		return nil, err
+	}
+	return &a, nil
 }

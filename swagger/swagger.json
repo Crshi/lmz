@@ -1,7 +1,47 @@
 {
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "title": "LMZ API",
+        "version": "1.0.0",
+        "contact": {
+            "email": "1078649116@qq.com"
+        }
     },
-    "paths": null
+    "basePath": "/v1",
+    "paths": {
+        "/api/": {
+            "get": {
+                "tags": [
+                    "api"
+                ],
+                "description": "GetAllArticle",
+                "operationId": "ArticleController.GetAll",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.User.Id"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.User": {
+            "title": "User",
+            "type": "object"
+        }
+    }
 }

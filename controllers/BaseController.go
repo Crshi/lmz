@@ -19,7 +19,7 @@ func (c *BaseController) Prepare() {
 }
 
 func (c *BaseController) jsonResult(code enums.JsonResultCode, msg string, obj interface{}) {
-	r := &models.JsonResult{code, msg, obj}
+	r := &models.JsonResult{Code: code, Msg: msg, Obj: obj}
 	c.Data["json"] = r
 	c.ServeJSON()
 	c.StopRun()

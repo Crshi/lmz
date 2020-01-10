@@ -31,6 +31,16 @@ func (c *ArticleController) Delete() {
 
 }
 
+func (c *ArticleController) Get() {
+
+}
+
+// @Title GetAll
+// @Description GetAllArticle
+// @Param   body        body    models.User true        "body for user content"
+// @Success 200 {int} models.User.Id
+// @Failure 403 body is empty
+// @router / [get]
 func (c *ArticleController) GetAll() {
 	//直接反序化获取json格式的requestbody里的值
 	var input models.ArticleQueryInput
