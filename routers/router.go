@@ -11,7 +11,6 @@ import (
 )
 
 func init() {
-
 	//运行跨域请求
 	//在http请求的响应流头部加上如下信息
 	//rw.Header().Set("Access-Control-Allow-Origin", "*")

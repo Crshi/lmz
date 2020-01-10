@@ -19,29 +19,94 @@
                 "parameters": [
                     {
                         "in": "body",
-                        "name": "body",
-                        "description": "body for user content",
+                        "name": "TagId",
+                        "description": "your appid",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.User"
-                        }
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "CatalogId",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "CreationTime",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "Filter",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "Sort",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "Order",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "SkipCount",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "MaxResultCount",
+                        "description": "your appid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{int} models.User.Id"
+                        "description": "Articles By Page"
                     },
                     "403": {
                         "description": "body is empty"
                     }
                 }
             }
-        }
-    },
-    "definitions": {
-        "models.User": {
-            "title": "User",
-            "type": "object"
         }
     }
 }

@@ -16,7 +16,10 @@
                 // "GOPATH":"C:/Users/DMRDC/go"
                 //"GOPATH":"C:/Users/诚如是/go"
             },
-            "args": [],
+            "args": [
+                "-gendoc=true",
+                "-downdoc=true"   
+            ],
             "showLog": true
         }
     ]
