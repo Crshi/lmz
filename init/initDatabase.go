@@ -38,7 +38,7 @@ func InitDatabase() {
 	//如果是开发模式，则显示命令信息
 	isDev := (beego.AppConfig.String("runmode") == "dev")
 	//自动建表
-	orm.RunSyncdb("default", false, isDev)
+	orm.RunSyncdb("default", true, true)
 	if isDev {
 		orm.Debug = isDev
 	}
