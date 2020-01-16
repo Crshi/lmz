@@ -23,7 +23,14 @@ func (c *ArticleController) Add() {
 
 }
 
-func (c *ArticleController) Edit() {
+// @Title Update
+// @Description update the object
+// @Param	objectId		path 	string	true		"The objectid you want to update"
+// @Param	body		body 	models.Object	true		"The body"
+// @Success 200 {object} models.Object
+// @Failure 403 :objectId is empty
+// @router /:objectId [put]
+func (c *ArticleController) Update() {
 
 }
 
@@ -31,23 +38,22 @@ func (c *ArticleController) Delete() {
 
 }
 
+// @Title Get
+// @Description find object by objectid
+// @Param	objectId		path 	string	true		"the objectid you want to get"
+// @Success 200 {object} models.Object
+// @Failure 403 :objectId is empty
+// @router /:objectId [get]
 func (c *ArticleController) Get() {
 
 }
 
 // @Title GetAll
-// @Description GetAllArticle
-// @Param   TagId body string true "your appid"
-// @Param	CatalogId body string true "your appid"
-// @Param	CreationTime body string true "your appid"
-// @Param	Filter body string true "your appid"
-// @Param	Sort body string true "your appid"
-// @Param	Order body string true "your appid"
-// @Param	SkipCount body string true "your appid"
-// @Param	MaxResultCount body string true "your appid"
-// @Success 200 Articles By Page
-// @Failure 403 body is empty
-// @router / [get]
+// @Description find all artical by objectid
+// @Param	objectId		path 	string	true		"the objectid you want to get"
+// @Success 200 {object} models.ArticleQueryInput
+// @Failure 403 {object} is empty
+// @router /:objectId [get]
 func (c *ArticleController) GetAll() {
 	//直接反序化获取json格式的requestbody里的值
 	var input models.ArticleQueryInput

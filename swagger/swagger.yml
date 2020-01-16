@@ -1,76 +1,60 @@
 swagger: "2.0"
 info:
-  title: LMZ API
+  title: LMZ beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
   version: 1.0.0
+  termsOfService: http://beego.me/
   contact:
-    email: 1078649116@qq.com
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
 basePath: /v1
 paths:
-  /api/:
+  /artitle/{objectId}:
     get:
       tags:
-      - api
-      description: GetAllArticle
-      operationId: ArticleController.GetAll
+      - artitle
+      description: find object by objectid
+      operationId: ArticleController.Get
       parameters:
-      - in: body
-        name: TagId
-        description: your appid
+      - in: path
+        name: objectId
+        description: the objectid you want to get
         required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: CatalogId
-        description: your appid
-        required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: CreationTime
-        description: your appid
-        required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: Filter
-        description: your appid
-        required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: Sort
-        description: your appid
-        required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: Order
-        description: your appid
-        required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: SkipCount
-        description: your appid
-        required: true
-        schema:
-          type: string
-        type: string
-      - in: body
-        name: MaxResultCount
-        description: your appid
-        required: true
-        schema:
-          type: string
         type: string
       responses:
         "200":
-          description: Articles By Page
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Object'
         "403":
-          description: body is empty
+          description: :objectId is empty
+    put:
+      tags:
+      - artitle
+      description: update the object
+      operationId: ArticleController.Update
+      parameters:
+      - in: path
+        name: objectId
+        description: The objectid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: The body
+        required: true
+        schema:
+          $ref: '#/definitions/models.Object'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+definitions:
+  models.Object:
+    title: Object
+    type: object
